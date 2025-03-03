@@ -42,10 +42,10 @@ Originally introduced by Liu et al. in the paper: “Deep Learning Face Attribut
 Official project page: http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
 ## Goal of Project:
-We want to create a generative model (e.g., a VAE or a GAN) that is more robust to heterogeneous data distributions by using a superquantile-based loss. Specifically for the proposing two dataset, for dataset 1 (MNIST), we want to see if the CVaR-based approach generates the "rare" digits more faithfully than standard training when the data is scarce or imbalanced; for dataset 2 (CelebA), by focusing on tail events (rare attribute combinations), we are expecting to see that superquantile-based training captures those rare cases more robustly.
+We want to create a generative model (e.g., a VAE or a GAN) that is more robust to heterogeneous data distributions by using a superquantile-based loss. Specifically for the proposing two dataset, for dataset 1 (MNIST), we want to see if the CVaR-based approach generates the "rare" digits better than standard training when the data is scarce or imbalanced; for dataset 2 (CelebA), by focusing on tail events (rare attribute combinations), we are expecting to see that superquantile-based training captures those rare cases more robustly.
 
 ## Motivation:
-Standard training methods may fail to capture tail events in the data distribution, especially when training data is imbalanced or exhibits complex heterogeneity. Superquantile-based methods focus on the “worst” tail portion of the loss distribution, thus making the model more robust under these challenging or extreme conditions.
+Standard training methods may fail to capture tail events in the data distribution, especially when training data is imbalanced or exhibits complex heterogeneity. Superquantile-based methods focus on the “worst” tail portion of the loss distribution, thus making the model more robust under these cextreme conditions.
 
 
 ## Contact / Author
