@@ -6,7 +6,6 @@
 - [Datasets](#datasets)
 - [Goal of Project](#goal-of-project)
 - [Motivation](#motivation)
-- [Generative Model Architecture](#generative-model-architecture)
 - [Contact / Author](#contact--author)
 
 ---
@@ -21,19 +20,32 @@ Generative models, such as Variational Autoencoders (VAEs) and Generative Advers
 In this project, we are interested in integrating superquantile-based learning into deep generative models (VAE and GAN) to enhance robustness when faced with heterogeneous or imbalanced data. At this point, our plan for the experimental setting involves two main datasets: MNIST, modified to induce significant class imbalance, and CelebA, known for its vast range of facial attributes that include rare attribute combinations. We expect that, under these bad data conditions, the superquantile-based generative training will better capture underrepresented classes and rare feature combinations.  By focusing on the worst portion of the distribution, superquantile-based generative models with the capacity to adapt to extreme scenarios, are expected to offer a more resilient and inclusive framework for deep generative learning. We will compare our proposed method to other types of methods which also aim to address data heterogeneity and enhance model robustness to see what can be improved.
 
 
-## Datasets:
-1. MNIST with Class Imbalance
-2. CelebA (Face Dataset)
+## Information about the Datasets:
+1. MNIST
+MNIST is a classic benchmark dataset for image classification, consisting of:
 
-... and probabily more 
+70,000 handwritten digit images in total (60,000 for training, 10,000 for testing).
+Each image is a 28×28 grayscale bitmap depicting one of the digits 0–9.
+Widely used for both computer vision and machine learning research tasks (e.g., classification, generative modeling).
+
+Official website/repository: http://yann.lecun.com/exdb/mnist/
+
+2. CelebA (Face Dataset)
+CelebA is a large-scale face dataset that contains:
+
+Over 200,000 celebrity face images in color.
+40 binary attributes annotated for each image (e.g., “Smiling”, “Bald”, “Bangs”).
+Images are loosely cropped, with large pose variations and background clutter.
+Commonly used for attribute prediction, face recognition, and image-to-image translation tasks.
+Originally introduced by Liu et al. in the paper: “Deep Learning Face Attributes in the Wild” (ICCV, 2015).
+
+Official project page: http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
 
 ## Goal of Project:
 We want to create a generative model (e.g., a VAE or a GAN) that is more robust to heterogeneous data distributions by using a superquantile-based loss. Specifically for the proposing two dataset, for dataset 1 (MNIST), we want to see if the CVaR-based approach generates the "rare" digits more faithfully than standard training when the data is scarce or imbalanced; for dataset 2 (CelebA), by focusing on tail events (rare attribute combinations), we are expecting to see that superquantile-based training captures those rare cases more robustly.
 
 ## Motivation:
 Standard training methods may fail to capture tail events in the data distribution, especially when training data is imbalanced or exhibits complex heterogeneity. Superquantile-based methods focus on the “worst” tail portion of the loss distribution, thus making the model more robust under these challenging or extreme conditions.
-
-## Generative Model Architecture
 
 
 ## Contact / Author
