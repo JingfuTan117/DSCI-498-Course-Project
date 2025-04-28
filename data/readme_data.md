@@ -1,7 +1,3 @@
-====================
-DATA ACQUISITION GUIDE
-====================
-
 This folder houses all raw data used by our experiments.  Please follow the instructions below to download and organize the datasets before running any training scripts.
 
 1. MNIST
