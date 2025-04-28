@@ -48,6 +48,57 @@ We want to create a generative model (e.g., a VAE or a GAN) that is more robust 
 Standard training methods may fail to capture tail events in the data distribution, especially when training data is imbalanced or exhibits complex heterogeneity. Superquantile-based methods focus on the “worst” tail portion of the loss distribution, thus making the model more robust under these cextreme conditions.
 
 
+## Required Packages:
+• Python 3.7 or later  
+• torch  
+• torchvision  
+• matplotlib  
+• numpy  
+• scipy  
+• scikit-learn  
+
+You can install them with:
+
+    pip install torch torchvision matplotlib numpy scipy scikit-learn
+
+(If you prefer, create and activate a virtual environment first:
+
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install torch torchvision matplotlib numpy scipy scikit-learn
+)
+
+## How to Run:
+All experiments are driven by `main.py`.  
+1. Variational Autoencoder on MNIST (imbalanced)
+   
+       python main.py vae --dataset mnist --alpha 0.8 --epochs 400  
+
+   • `--alpha`     CVaR tail fraction (0.0 = vanilla expected-loss)  
+   • `--epochs`    Number of training epochs  
+
+3. DCGAN on CelebA (downsampled to 5000 images, 32×32 crops)  
+   
+       python main.py gan --dataset celeba --alpha 0.8 --epochs 50  
+
+   • `--alpha`     CVaR tail fraction  
+   • `--epochs`    Number of training epochs  
+
+Output files (saved in the working directory):
+
+• VAE:  
+  – `vae_loss_curves.png`  
+  – `vae_loss_distribution.png`  
+  – `vae_samples.png`  
+
+• GAN:  
+  – `gan_loss_distribution.png`  
+  – `gan_samples.png`  
+
+## Tips:
+• To change learning rates, batch sizes, or other hyperparameters, edit the defaults at `main.py` or pass new values via command-line flags.  
+• See `aux_1.py` for data-loading details and model definitions.  
+
 ## Contact / Author
 **Jingfu Tan**  
 - Email: [jit423@lehigh.edu](jit423@lehigh.edu)   
