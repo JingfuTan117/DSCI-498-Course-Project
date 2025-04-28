@@ -6,6 +6,9 @@
 - [Datasets](#datasets)
 - [Goal of Project](#goal-of-project)
 - [Motivation](#motivation)
+- [Required Packages](#required-packages)
+- [How to Run](#how-to-run)
+- [Tips](#tips)
 - [Contact / Author](#contact--author)
 
 ---
