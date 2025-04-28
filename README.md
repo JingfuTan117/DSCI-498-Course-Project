@@ -92,6 +92,7 @@ Output files (saved in the working directory):
   – `vae_samples.png`  
 
 • GAN:  
+  – `gan_loss_curves.png` 
   – `gan_loss_distribution.png`  
   – `gan_samples.png`  
 
